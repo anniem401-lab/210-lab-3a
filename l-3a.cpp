@@ -10,25 +10,26 @@ struct Restaurant
 {
     string name;
     string cuisine;
-    string address;
-    double avgPrice; 
+    string restaurantAddress;
     double rating; // 0.0-5.0
-    bool isOpen;
+    bool review;
 };
 
 int main() 
 {
-    Restaurant myRestaurant = {"Pasta Palace", "Italian", "123 Main St", 15.99, 4.5, true};
+    // Temporary struct: Receives user input to populate Restaurant struct
+    Restaurant temp;
 
-    // Display restaurant information
-    cout << endl;
-    cout << "Restaurant Name: " << myRestaurant.name << endl;
-    cout << "Cuisine Type: " << myRestaurant.cuisine << endl;
-    cout << "Address: " << myRestaurant.address << endl;
-    cout << "Average Price: $" << myRestaurant.avgPrice << endl;
-    cout << "Rating: " << myRestaurant.rating << "/5.0" << endl;
-    cout << "Open Now: " << (myRestaurant.isOpen ? "Yes" : "No") << endl;
-    cout << endl;
+    cout << "Enter restaurant name: ";
+    getline(cin, temp.name);
+    cout << "Enter cuisine type: ";
+    getline(cin, temp.cuisine);
+    cout << "Enter restaurant address: ";
+    getline(cin, temp.restaurantAddress);
+    cout << "Leave a rating. (0.0-5.0): ";
+    cin >> temp.rating;
+    cout << "Would you like to leave a review? (1 for Yes, 0 for No): ";
+    cin >> temp.review;
 
     return 0;
 }
