@@ -50,7 +50,7 @@ int main()
     double userRating;
     cin >> userRating;
 
-    while (temp.rating < 0.0 || temp.rating > 5.0)
+    while (userRating < 0.0 || userRating > 5.0)
     {
         cout << "Error: Please enter a valid rating (0.0-5.0): ";
         cin >> userRating;
