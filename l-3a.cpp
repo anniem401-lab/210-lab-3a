@@ -33,20 +33,34 @@ int main()
     return 0;
 }
 
-Restaurant populateData()
-{
     // Function to get user input and populate the Restaurant struct
-    Restaurant temp;
+    Restaurant populateData()
+{
+    Restaurant temp; // Declares an object named temp of type Restaurant
     cout << "Enter restaurant name: ";
     getline(cin, temp.name);
+    
     cout << "Enter cuisine type: ";
     getline(cin, temp.cuisine);
+
     cout << "Enter restaurant address: ";
     getline(cin, temp.restaurantAddress);
+
     cout << "Leave a rating. (0.0-5.0): ";
     cin >> temp.rating;
+
     cout << "Would you recommend this restaurant? (Y for Yes, N for No): ";
     cin >> temp.recommend;
+
+    char userAns;
+    cin >> userAns;
+    userAns = toupper(userAns);
+    while (userAns != 'Y' && userAns != 'N')
+    {
+        cout << "Error: Please only enter Y for Yes or N for No: ";
+        cin >> userAns;
+        userAns = toupper(userAns);
+    }
 
     return temp;
 };
