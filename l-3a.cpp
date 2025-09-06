@@ -6,7 +6,7 @@
 using namespace std;
 
 // Structure holding restaurant information
-struct Restaurant 
+struct RestaurantData 
 {
     string name;
     string cuisine;
@@ -15,11 +15,9 @@ struct Restaurant
     bool review;
 };
 
-int main() 
+// Function to get user input and populate the RestaurantData struct
+struct temp
 {
-    // Temporary struct: Receives user input to populate Restaurant struct
-    Restaurant temp;
-
     cout << "Enter restaurant name: ";
     getline(cin, temp.name);
     cout << "Enter cuisine type: ";
@@ -30,6 +28,20 @@ int main()
     cin >> temp.rating;
     cout << "Would you like to leave a review? (1 for Yes, 0 for No): ";
     cin >> temp.review;
+};
+
+
+int main() 
+{
+    RestaurantData temp;
+    temp = RestaurantData();
+
+    // Populate the input struct with user data
+    cout << "Restaurant name: " << temp.name << endl;
+    cout << "Cuisine type: " << temp.cuisine << endl;
+    cout << "Restaurant address: " << temp.restaurantAddress << endl;
+    cout << "Your rating: " << temp.rating << endl;
+    cout << "Your review: " << temp.review << endl;
 
     return 0;
 }
